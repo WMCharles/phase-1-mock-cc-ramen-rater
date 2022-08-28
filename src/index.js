@@ -19,3 +19,34 @@ function displaDish(){
 }
 
 displaDish()
+
+//To add ramen to jsonfile
+function postRamen(ramenObj){
+    fetch("http://localhost:3000/ramens", {
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(ramenObj)
+    })
+    .then(res => res.json())
+    .then(ramen => console.log(ramen))
+}
+
+//Take User Input
+function addRamen(e){
+    e.preventDefault()
+
+    let ramenObj = {
+        name: e.target.new_name.value,
+        restaurant: e.target.new_restaurant.value,
+        image: e.target.new_image.value,
+        rating: e.target.new_rating.value,
+        comment: e.target.new_comment.value
+    }
+
+    postRamen(ramenObj)
+    renderDish(ramenObj)
+}
+
+document.getElementById('new-ramen').addEventListener('submit', addRamen)
