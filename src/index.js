@@ -11,6 +11,15 @@ function fetchRamen(){
 function renderDish(dish){
     let rdish = document.createElement('img')
     rdish.src = dish.image
+
+    // when image is clicked
+    rdish.addEventListener('click', () => {
+        document.querySelector(".detail-image").src = dish.image
+        document.querySelector(".name").textContent = dish.name
+        document.querySelector(".restaurant").textContent = dish.restaurant
+        document.querySelector("#rating-display").textContent = dish.rating
+        document.querySelector("#comment-display").textContent = dish.comment
+    })
     document.getElementById('ramen-menu').appendChild(rdish)
 }
 
