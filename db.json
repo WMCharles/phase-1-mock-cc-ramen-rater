@@ -47,6 +47,14 @@
       "rating": "4",
       "comment": "ahaha",
       "id": 6
+    },
+    {
+      "name": "charles",
+      "restaurant": "keroka",
+      "image": "https://img.freepik.com/premium-photo/shoyu-ramen-noodle-with-pork-egg_1339-63031.jpg?w=2000",
+      "rating": "9",
+      "comment": "woi",
+      "id": 7
     }
   ]
 }
